@@ -1,0 +1,77 @@
+name: PHP110 901 experimental module
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: php110-901-experimental
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 120
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Locate complete source kit
+        id: kit
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          if [ -s build.sh ] && [ -s cpuinfo_spoof.c ]; then
+            printf 'dir=.\n' >> "$GITHUB_OUTPUT"
+          elif [ -s cpuinfo_php110_901_experimental/build.sh ] && [ -s cpuinfo_php110_901_experimental/cpuinfo_spoof.c ]; then
+            printf 'dir=cpuinfo_php110_901_experimental\n' >> "$GITHUB_OUTPUT"
+          else
+            echo 'Source kit incomplete: upload all files and retain .github/workflows/build.yml.' >&2
+            exit 1
+          fi
+
+      - name: Install build dependencies
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          sudo apt-get update
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+            bc bison build-essential ca-certificates cpio curl flex \
+            binutils-aarch64-linux-gnu binutils-arm-linux-gnueabi \
+            gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi \
+            libelf-dev libssl-dev libtinfo5 libncurses5 \
+            python3 python3-pip rsync tar unzip xz-utils
+          python3 -m pip install --disable-pip-version-check --no-cache-dir 'pyelftools==0.33'
+
+      - name: Build and verify experimental module
+        shell: bash
+        env:
+          QILIN_JOBS: '2'
+          KIT_DIR: ${{ steps.kit.outputs.dir }}
+        run: |
+          set -Eeuo pipefail
+          bash "$KIT_DIR/build.sh"
+
+      - name: Upload verified phone files
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: php110-901-experimental-verified-${{ github.run_id }}
+          if-no-files-found: error
+          path: |
+            ${{ steps.kit.outputs.dir }}/dist/cpuinfo_spoof.ko
+            ${{ steps.kit.outputs.dir }}/dist/build_report.json
+            ${{ steps.kit.outputs.dir }}/dist/run.sh
+            ${{ steps.kit.outputs.dir }}/dist/final.config
+            ${{ steps.kit.outputs.dir }}/dist/config.diff
+            ${{ steps.kit.outputs.dir }}/dist/provenance.json
+
+      - name: Upload build logs
+        if: always() && steps.kit.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: php110-901-build-logs-${{ github.run_id }}
+          if-no-files-found: warn
+          path: ${{ steps.kit.outputs.dir }}/build/run.*/logs/**
