@@ -1,0 +1,37 @@
+{
+  "target_id": "oneplus-php110-mt6983-510226-901-experiment",
+  "revision": "qilin-php510-901-exp1",
+  "target_release": "5.10.226-android12-9-o-g104a939c0e3e",
+  "target_firmware": "PHP110_15.0.0.1301(CN01)",
+  "source_firmware": "PHP110_15.0.0.901(CN01)",
+  "source_repository": "https://github.com/OnePlusOSS/android_kernel_5.10_oneplus_mt6983",
+  "source_commit": "cd19560616750906a568aa271d8b49ac17f13914",
+  "captured_config_sha256": "0fd19e2ba9114e47b80b3cd35792d8245deffb50887eba7c65e2a56b231fca70",
+  "layout_names": [
+    "inode_size",
+    "device_size",
+    "device_id_offset",
+    "proc_ops_size",
+    "proc_open_offset",
+    "proc_read_iter_offset",
+    "proc_release_offset",
+    "proc_inode_vfs_offset",
+    "proc_inode_pde_offset",
+    "pde_size",
+    "pde_ops_offset",
+    "pde_low_ino_offset",
+    "pde_parent_offset",
+    "pde_name_offset",
+    "pde_mode_offset",
+    "pde_flags_offset"
+  ],
+  "private_layout_source": "compiled pinned 901 source; not measured on running 1301",
+  "expected_full_pointer_patches": 8,
+  "expected_full_total": 9,
+  "boost": "disabled; no captured node",
+  "target_crc_samples": {
+    "module_layout": "0x7c24b32d",
+    "__stack_chk_fail": "0x98a9d10c"
+  },
+  "phone_runtime": "not tested"
+}

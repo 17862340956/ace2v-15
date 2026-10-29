@@ -1,0 +1,143 @@
+{
+  "repository": "OnePlusOSS/android_kernel_5.10_oneplus_mt6983",
+  "commit": "cd19560616750906a568aa271d8b49ac17f13914",
+  "firmware": "PHP110_15.0.0.901(CN01)",
+  "scope": "selected source file hashes, not proof of running 1301 equivalence",
+  "files": [
+    {
+      "path": "fs/proc/internal.h",
+      "sha256": "3ade8dcf789f1ea59c66b004bda373e6976b7946282066c26038a0b94976265a",
+      "git_blob": "afbe96b6bf77def7e5cd5b3d62e90b20c87728b4",
+      "size": 9262
+    },
+    {
+      "path": "include/linux/proc_fs.h",
+      "sha256": "596ecd7da76fe72ec7c14410d2bbe7d3f42f74e4b19bfab69c6066d70b5e3d4c",
+      "git_blob": "8c892730a1f1527f86aa2f30ddfa8a986c333afb",
+      "size": 8664
+    },
+    {
+      "path": "include/linux/device.h",
+      "sha256": "bfd9d9d33522e780278b22949d54fcbc76a0d7cb82b72cc19fc3cf6a8ae6322b",
+      "git_blob": "8a9fd245b05b84334bb9f9b2f6cb8767b14b09da",
+      "size": 32717
+    },
+    {
+      "path": "include/linux/fs.h",
+      "sha256": "b9fa53b6708ca845a0079f2245500b9fa292d55735bb4b6517a9945853cca4f0",
+      "git_blob": "7dcf48e896f4f22782fa56f1e6084592fcb6b67b",
+      "size": 118856
+    },
+    {
+      "path": "include/linux/cpufreq.h",
+      "sha256": "f91b1e3bb45ba020f705df93bbec335a4cd9a44b94268bdacc3e3af9657a7100",
+      "git_blob": "54ee250532199768db45ac78ae8096977bd6ef88",
+      "size": 31769
+    },
+    {
+      "path": "include/linux/sysfs.h",
+      "sha256": "08f52189acc6f02eecdae5f65c5a0801f0cd047cc675fbe00285bf54268f8fde",
+      "git_blob": "2caa34c1ca1ade441589d74508a0ff6b2d47d2ce",
+      "size": 17824
+    },
+    {
+      "path": "include/linux/seq_file.h",
+      "sha256": "fab2b713931932f14284c816ad1295120cfd6521d7e7bc30db90e9eabb0edc9e",
+      "git_blob": "662a8cfa1bcd3e58b777e1428c89618ff0c49ede",
+      "size": 8646
+    },
+    {
+      "path": "include/linux/utsname.h",
+      "sha256": "5fbb0533f720033929778ad6213f75c46e6dd73ae3e41d5d9be962db3b5bedd1",
+      "git_blob": "44429d9142ca3d08309435d7fe27e4ade7038103",
+      "size": 1828
+    },
+    {
+      "path": "arch/arm64/kernel/cpuinfo.c",
+      "sha256": "a216f73991a18d3b032bc7257b76d0f17f41d618299654931cde518bbd380417",
+      "git_blob": "54af35fadd90111b8ccec374ac7ad8b40d749fc1",
+      "size": 13005
+    },
+    {
+      "path": "drivers/base/topology.c",
+      "sha256": "cfd902aff5be9621ebb90fdb34808c45c42c89742e0435dfe0c057472feac57f",
+      "git_blob": "4d254fcc93d1f849222da8872e80d447973809e4",
+      "size": 3969
+    },
+    {
+      "path": "drivers/base/cpu.c",
+      "sha256": "66e87350d84418c0484cae79d0c7116ce6bc6f5b30629682e021d29dc254e4c5",
+      "git_blob": "e3aed8333f0976d4f5b0aee568e0a00437403d3d",
+      "size": 16638
+    },
+    {
+      "path": "drivers/cpufreq/freq_table.c",
+      "sha256": "3d3eb47db0ea6e73cacf673bc912715ce19eb2ee2d474a3fc20488cdecbc2caf",
+      "git_blob": "483b51854a61e6ca09ae58bdbc49ef93281e6492",
+      "size": 9122
+    },
+    {
+      "path": "drivers/cpufreq/cpufreq.c",
+      "sha256": "17e08c22c1260bb3234fcc3032c4e9576830bcde6baab48f776a0ae3a1ccbfae",
+      "git_blob": "fba2d870df5475d1e2971819448f98cc361e6ecb",
+      "size": 76717
+    },
+    {
+      "path": "build.config.common",
+      "sha256": "85db703394f1bfd6d0f6211fe3f34ce0e7ce63286c127448ab3a409e994d10a2",
+      "git_blob": "9ec1c637a79fec1d1c08d9893d0c57f255a1ab27",
+      "size": 378
+    },
+    {
+      "path": "build.config.mtk.aarch64",
+      "sha256": "25b11b31d13a8f96dc42f276cb0edbcead2d24b886bfc486cc17f26db295187a",
+      "git_blob": "3bd1a992b7386c6738abcfcb381931548b459c3c",
+      "size": 644
+    },
+    {
+      "path": "build.config.gki.aarch64",
+      "sha256": "e961987f2a9fb26d31b543e4b8ffcf5ca96d489c4786935d899bad63323ae1b0",
+      "git_blob": "a406d0c71f75d597779acee11f9d67955495cd4d",
+      "size": 1483
+    },
+    {
+      "path": "Makefile",
+      "sha256": "9082c0faacbaffc191b6df36d7bf977bc553c9f1664beccf63565458557ca4ba",
+      "git_blob": "b559c84403fecf7166f95c732c8289dfad943d75",
+      "size": 68630
+    },
+    {
+      "path": "scripts/setlocalversion",
+      "sha256": "b93e6642d625018617e190f60ec9842715cdd6a16440d824e5a36d1575cf4e1c",
+      "git_blob": "7e35c2fe65d0728e1bd996a9b87c5c1186c9d050",
+      "size": 5574
+    },
+    {
+      "path": "scripts/Makefile.modpost",
+      "sha256": "039ace952de66c17560d11c30b2be64951110033b50621e6ff80e6890b29babf",
+      "git_blob": "9d7c5e48134c52ee6b80be9f482da6e498331942",
+      "size": 5836
+    },
+    {
+      "path": "include/linux/compiler-clang.h",
+      "sha256": "7e35c2ae69c83b51779ebb80c7cdc334ec7bb5859e193378c3d0b5eb03fe56d7",
+      "git_blob": "8a26cd96674120adf30c49b2a9e25f1c0d509073",
+      "size": 3089
+    },
+    {
+      "path": "fs/proc/cpuinfo.c",
+      "sha256": "6aface754d2f1f95a75655c7b80bbc8081160371205685afeccaa8c6fb9f8f31",
+      "size": 740
+    },
+    {
+      "path": "include/linux/module.h",
+      "sha256": "d77462397b060dbd27cca8aeaad370600a394fdc42a32ae9aab2384cc5cb8990",
+      "size": 25012
+    },
+    {
+      "path": "drivers/misc/mediatek/Kconfig",
+      "sha256": "b496cd86d8d11a0742230f2c82fc76ceaa577edefc68bc9b0ee9bfc291f01008",
+      "size": 8845
+    }
+  ]
+}

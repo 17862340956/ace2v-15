@@ -1,0 +1,41 @@
+{
+  "checks": [
+    {
+      "test": "reject r5_namespace_fixed_20261028/cpuinfo_spoof.ko",
+      "result": "passed",
+      "reason": "wrong module name/revision"
+    },
+    {
+      "test": "reject php110_extra_review_20261029/php110_extra_20261029_143243_18028/modules/sample_1_adsp-v2.ko",
+      "result": "passed",
+      "reason": "wrong module name/revision"
+    },
+    {
+      "test": "reject php110_extra_review_20261029/php110_extra_20261029_143243_18028/modules/sample_2_ak7314_22021.ko",
+      "result": "passed",
+      "reason": "wrong module name/revision"
+    },
+    {
+      "test": "empty symvers rejected",
+      "result": "passed"
+    },
+    {
+      "test": "disabled CFI rejected",
+      "result": "passed"
+    },
+    {
+      "test": "display feature preset subset of captured target",
+      "result": "passed",
+      "feature_count": 36
+    }
+  ],
+  "real_ash_phone_script_syntax": "passed using busybox-w32 ash -n",
+  "C_compilation": "not run; Linux build environment absent",
+  "positive_KO_verification": "not run; no PHP110 build yet",
+  "phone_runtime": "not tested",
+  "build_script_shell_parse": "BusyBox ash -n passed; real Bash/Linux execution not performed",
+  "embedded_build_python": "AST syntax passed",
+  "pinned_source_reference_hashes": "23 listed reference files matched",
+  "source_review": "independent review, no definite issue outstanding; not a compiler or runtime proof",
+  "workflow": "reviewed root/subdirectory location and success-only verified artifact upload"
+}
