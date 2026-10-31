@@ -1,4 +1,4 @@
-name: PHP110 901 experimental module
+name: PHP110 901 experimental module - buildfix r2
 
 on:
   workflow_dispatch:
@@ -25,6 +25,8 @@ jobs:
           set -Eeuo pipefail
           if [ -s build.sh ] && [ -s cpuinfo_spoof.c ]; then
             printf 'dir=.\n' >> "$GITHUB_OUTPUT"
+          elif [ -s cpuinfo_php110_901_buildfix_r2/build.sh ] && [ -s cpuinfo_php110_901_buildfix_r2/cpuinfo_spoof.c ]; then
+            printf 'dir=cpuinfo_php110_901_buildfix_r2\n' >> "$GITHUB_OUTPUT"
           elif [ -s cpuinfo_php110_901_experimental/build.sh ] && [ -s cpuinfo_php110_901_experimental/cpuinfo_spoof.c ]; then
             printf 'dir=cpuinfo_php110_901_experimental\n' >> "$GITHUB_OUTPUT"
           else
@@ -44,6 +46,14 @@ jobs:
             libelf-dev libssl-dev libtinfo5 libncurses5 \
             python3 python3-pip rsync tar unzip xz-utils
           python3 -m pip install --disable-pip-version-check --no-cache-dir 'pyelftools==0.33'
+
+      - name: Test source dependency regression
+        shell: bash
+        env:
+          KIT_DIR: ${{ steps.kit.outputs.dir }}
+        run: |
+          set -Eeuo pipefail
+          python3 "$KIT_DIR/test_vendor_dependencies.py"
 
       - name: Build and verify experimental module
         shell: bash
@@ -75,3 +85,4 @@ jobs:
           name: php110-901-build-logs-${{ github.run_id }}
           if-no-files-found: warn
           path: ${{ steps.kit.outputs.dir }}/build/run.*/logs/**
+
