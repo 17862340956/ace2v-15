@@ -1,0 +1,35 @@
+{
+  "kernel_repository": "OnePlusOSS/android_kernel_5.10_oneplus_mt6983",
+  "kernel_commit": "cd19560616750906a568aa271d8b49ac17f13914",
+  "modules_repository": "OnePlusOSS/android_kernel_modules_oneplus_mt6983",
+  "modules_commit": "749b101b1a1487f1b1f8a5b4b3319e7ba6ed0a5d",
+  "modules_archive_url": "https://codeload.github.com/OnePlusOSS/android_kernel_modules_oneplus_mt6983/tar.gz/749b101b1a1487f1b1f8a5b4b3319e7ba6ed0a5d",
+  "module_files": [
+    {
+      "path": "vendor/oplus/kernel/cpu/sched/Kconfig",
+      "sha256": "6e3b027922ed619ce3f3a40075eedd1acf9a65228459286844e2e0ea426d3aad",
+      "git_blob": "b9801e9b45d28843e439f15c0bee66d7ff665134"
+    },
+    {
+      "path": "vendor/oplus/kernel/cpu/sched/Makefile",
+      "sha256": "ced773d16c1be762156f191c2a0286399ad7cb2d653205c54f9ee4f8d0c27504",
+      "git_blob": "7e95a923ba0076d126c18b008267efdbe6c3b3a9"
+    }
+  ],
+  "kernel_links": [
+    {
+      "path": "kernel/oplus_cpu",
+      "target": "../../vendor/oplus/kernel/cpu",
+      "git_blob": "bfd3d0b433eaf85476feafe0d638aeae5511256c"
+    },
+    {
+      "path": "mm/oplus_mm",
+      "target": "../../vendor/oplus/kernel/mm",
+      "git_blob": "a488caa8305da6144242de4b37d8a567e86be6bb"
+    }
+  ],
+  "kernel_init_kconfig_sha256": "44a0bde06164529a99b139154a1696bcad548ac606379107b4cd11602004300e",
+  "reason": "init/Kconfig:858 reads kernel/oplus_cpu/sched/Kconfig via external vendor symlink",
+  "modules_archive_sha256": "8a09d075536b8b6dec4ae5d3957b32890243ee4c1aca5963c5b85986c7fcd1d0",
+  "archive_locally_downloaded_and_inspected": true
+}
